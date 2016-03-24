@@ -1,0 +1,17 @@
+<!doctype html>
+<html ng-app="cambioDivisaApp">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.js"></script>
+  <script src="./app.js" charset="utf-8"></script>
+</head>
+<body>
+<div ng-controller="CambioDivisaController">
+  <input type="number" min="0" ng-change="change()" ng-model="divisaValorOrigen"/>
+  <select id="desde" ng-model="divisaOrigen" ng-change="change()" ng-options="opt as opt.nom for opt in divisaOptions track by opt.codi">
+  </select>
+  <select id="fins" ng-model="divisaDesti" ng-change="change()" ng-options="opt as opt.nom for opt in divisaOptions track by opt.codi">
+  </select>
+  <h1>{{divisaValorCalculat}}</h1>
+</body>
+</html>
